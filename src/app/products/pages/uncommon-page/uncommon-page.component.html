@@ -1,0 +1,85 @@
+<p-panel header="Pipes B&aacute;sicos" class="pt-2">
+
+    <p>
+        Pipes incluidos en Angular, Usualmente en el Commom Module.
+    </p>
+</p-panel>
+
+<div class="grid">
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="i18nSelect Pipe" 
+            [toggleable]="true"
+            [collapsed]="true">
+            <p>
+                Saludos {{name}}, es un placer
+                {{gender | i18nSelect: invitationMap}} a nuestro evento.
+
+                <p-button (click) = "changeClient()"
+                        label="CambiarPersona">
+                </p-button>
+            </p>
+        </p-fieldset>
+
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+            <p>
+                {{clients.length | i18nPlural:clientsMap}}
+            </p>
+
+            <p-button (click) = "deleteClient()"
+                    [disabled]="clients.length === 0"
+                    label="Atender cliente"
+            >
+
+            </p-button>
+
+        </p-fieldset>
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <small>Util para string o arrays</small><br><br>
+
+            <b>Original</b>
+            <pre>{{clients}}</pre>
+
+            <b>Slice 0:2</b>
+            <pre> {{clients | slice:0:2}} </pre>
+
+            <b>Slice 1:2</b>
+            <pre> {{clients | slice:1:2}} </pre>
+
+            <b>Slice 0:-1</b>
+            <pre> {{clients | slice:0:-1}} </pre>
+
+            <b>{{myName}} 3:5</b>
+            <pre> {{myName | slice:3:5}} </pre>
+
+        </p-fieldset>
+        
+        <p-fieldset legend="JSON Pipe" [toggleable]="true">
+            <pre>{{person | json}}</pre>
+        </p-fieldset>
+
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <small>No conserva el orden original</small><br><br>
+
+            <ul>
+                <li *ngFor="let item of person | keyvalue">
+                    <b>{{item.key | titlecase}}: </b>
+                    {{item.value}}
+                </li>
+            </ul>
+        </p-fieldset>
+
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <small> Trabaja con Observables (principalmente) y Promesas</small><br><br>
+
+            <pre *ngIf="!(myObservableTimer | async)">Resolviendo observable...</pre>
+            <pre>{{myObservableTimer | async}}</pre>
+
+            <pre *ngIf="!(promiseValue | async)">Resolviendo promesa...</pre>
+            <pre>{{promiseValue | async}}</pre>
+
+
+            <!-- ! No muestra nada en json porque es independiente  -->
+            <!-- <pre>{{myObservableTimer | json}}</pre> -->
+        </p-fieldset>
+    </div>
+</div>

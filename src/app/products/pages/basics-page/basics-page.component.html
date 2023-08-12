@@ -1,0 +1,65 @@
+<p-panel header="Pipes B&aacute;sicos" class="pt-2">
+
+    <p>
+        Pipes incluidos en Angular, Usualmente en el Commom Module.
+    </p>
+</p-panel>
+
+<div class="grid mt-2">
+    <div class="col-12 md:col-4">
+        <p-card header="Uppercase">
+            {{nameLower | uppercase}}
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card header="Lowercase">
+            {{nameUpper | lowercase}}
+        </p-card>
+    </div>
+    <div class="col-12 md:col-4">
+        <p-card header="Titlecase">
+            {{fullName | titlecase}}
+        </p-card>
+    </div>
+
+    <!-- DATES -->
+    <div class="col-12 md:col-6">
+        <p-card header="Date">
+            <ol>
+                <li> Fecha </li>
+                <li> Fecha | date</li>
+                <li> Fecha | date:'short'</li>
+                <li> Fecha | date:'dd/MM/dddd'</li>
+                <li> Fecha | date:'dd/MMM/dddd'</li>
+            </ol>
+            <hr>
+            <ol>
+                <li>Fecha | date: 'long': 'GMT-4'</li>
+                <li>Fecha | date: 'long': 'GMT-6'</li>
+                <li>Fecha | date: 'long':'':'es-MX'</li>
+                <li>Fecha | date: 'long':'':'fr-CA'</li>
+                <li>Fecha | date:'dd/MMM/dddd':'':'es-MX'</li>
+            </ol>
+        </p-card>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-card header="Titlecase">
+            <ol>
+                <li>{{customDate}}</li>
+                <li>{{customDate | date}}</li>
+                <li>{{customDate | date: 'short'}}</li>
+                <li>{{customDate | date: 'dd/MM/YYYY'}}</li>
+                <li>{{customDate | date: 'dd/MM/YYYY':'':'es-MX'}}</li>
+            </ol>
+            <hr>
+            <ol>
+                <li>{{customDate | date: 'long': 'GMT-4'}}</li>
+                <li>{{customDate | date: 'long': 'GMT-6'}}</li>
+                <li>{{customDate | date:'long':'GMT-6':'es-MX'}}</li>
+                <li>{{customDate | date:'long':'':'fr-CA'}}</li>
+                <li>{{customDate | date:'dd/MMM/yyyy':'':'es-MX'}}</li>
+            </ol>
+
+        </p-card>
+    </div>
+</div>
