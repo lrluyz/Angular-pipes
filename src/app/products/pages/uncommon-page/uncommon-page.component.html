@@ -19,20 +19,25 @@
                 </p-button>
             </p>
         </p-fieldset>
+    </div>
 
+    <div class="col-12 md:col-6">
         <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
             <p>
                 {{clients.length | i18nPlural:clientsMap}}
             </p>
-
+    
             <p-button (click) = "deleteClient()"
                     [disabled]="clients.length === 0"
                     label="Atender cliente"
             >
-
+    
             </p-button>
-
+    
         </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
         <p-fieldset legend="Slice Pipe" [toggleable]="true">
             <small>Util para string o arrays</small><br><br>
 
@@ -52,11 +57,15 @@
             <pre> {{myName | slice:3:5}} </pre>
 
         </p-fieldset>
-        
+    </div>
+
+    <div class="col-12 md:col-6">
         <p-fieldset legend="JSON Pipe" [toggleable]="true">
             <pre>{{person | json}}</pre>
         </p-fieldset>
+    </div>
 
+    <div class="col-12 md:col-6">
         <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
             <small>No conserva el orden original</small><br><br>
 
@@ -67,7 +76,9 @@
                 </li>
             </ul>
         </p-fieldset>
+    </div>
 
+    <div class="col-12 md:col-6">
         <p-fieldset legend="Async Pipe" [toggleable]="true">
             <small> Trabaja con Observables (principalmente) y Promesas</small><br><br>
 

@@ -22,8 +22,7 @@ export class MenuComponent {
                 label: 'Personalizados',
                 icon: 'pi pi-cog',
                 items: [
-                  {label: 'Otro elemento',
-                  icon: 'pi pi-cog',}
+                  {label: 'Ejemplos', icon: 'pi pi-cog', routerLink: 'custom'}
                 ]
             }
         ];
